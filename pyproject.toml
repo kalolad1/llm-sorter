@@ -1,0 +1,38 @@
+[project]
+name = "llm-sort"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "darshanvkalola@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "pytest (>=9.0.2,<10.0.0)",
+    "pyright (>=1.1.0)",
+    "ruff (>=0.8.0)",
+    "pydantic-ai (>=1.37.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+filterwarnings = [
+    "ignore:There is no current event loop:DeprecationWarning:pydantic_ai",
+]
+
+[tool.pyright]
+pythonVersion = "3.10"
+typeCheckingMode = "basic"
+include = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
