@@ -18,7 +18,7 @@ DEFAULT_COMPARE_PROMPT = (
 T = TypeVar("T")
 
 class LLMSorter:
-    def __init__(self, api_key: str, model: str = "openai:gpt-5.2"):
+    def __init__(self, api_key: str, model: str = "anthropic:claude-sonnet-4-0"):
         self.api_key = api_key
         self.model = model
 
