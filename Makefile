@@ -5,4 +5,4 @@ lint:
 	poetry run pyright src/
 
 test:
-	poetry run pytest src/tests/ -s
+	poetry run pytest tests/ -s
