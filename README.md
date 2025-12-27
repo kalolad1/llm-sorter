@@ -43,9 +43,10 @@ urgent_first = sorter.sort(
 
 ## How It Works
 
-llm-sorter implements merge sort with LLM-powered comparisons. Instead of numeric comparison, the model decides which of two items should come first based on your prompt.
+llm-sorter implements merge sort with LLM-powered comparisons. Instead of numeric comparison, the model decides which of two items should come first based on your prompt. It will use the passed in objects `__str__` dunder method to formulate the prompt.
 
 This enables sorting by criteria that have no numeric representation: persuasiveness, professionalism, emotional intensity, policy compliance, or any semantic property.
+
 It can also enable the sorting of large lists that cannot be sorted within a single
 LLM call (with the tradeoff being significant more API calls, and the associated cost
 and latency of each call).
